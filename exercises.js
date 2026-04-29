@@ -20,7 +20,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   */
 
   // Modify the line of code BELOW to run a different exercise
-  exercise_01();
+  exercise_06();
   // Modify the line of code ABOVE to run a different exercise
 }
 
@@ -41,8 +41,10 @@ function exercise_01() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  function calculateArea(radius) {
+    return Math.PI * radius * radius;
+  }
+  console.log(calculateArea(5));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -61,8 +63,10 @@ function exercise_02() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  const calculateArea = function (radius) {
+    return Math.PI * radius * radius;
+  };
+  console.log(calculateArea(64));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -78,8 +82,10 @@ function exercise_03() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  const calculateArea = (radius) => {
+    return Math.PI * radius * radius;
+  }
+  console.log(calculateArea(100));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -99,8 +105,18 @@ function exercise_04() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  function isValidEmail(email ) {
+    const atSymbolIndex = email.indexOf("@");
+    if (atSymbolIndex === -1) {
+      return false;
+    }
+    const dotIndex = email.indexOf(".", atSymbolIndex);
+    if (dotIndex === -1) {
+      return false;
+    }
+    return true;
+  }
+  console.log(isValidEmail("test@email.com"));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -120,8 +136,11 @@ function exercise_05() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  function greet (name, greeting = "Hello") {
+    return `${greeting}, ${name}!`;
+  }
+  console.log(greet("Alice"));
+  console.log(greet("Bob", "Hi"));
   // CODE IN THE OPEN LINES ABOVE
 }
 
