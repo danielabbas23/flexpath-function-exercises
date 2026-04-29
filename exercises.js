@@ -20,7 +20,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   */
 
   // Modify the line of code BELOW to run a different exercise
-  exercise_06();
+  exercise_19();
   // Modify the line of code ABOVE to run a different exercise
 }
 
@@ -193,7 +193,16 @@ function exercise_07() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function incrementCounter() {
+    let counter = 0;
+
+    counter += 1;
+    console.log(counter);
+  }
+  incrementCounter();
+  incrementCounter();
+
+  console.log(counter);
 
   // CODE IN THE OPEN LINES ABOVE
 }
@@ -212,8 +221,16 @@ function exercise_08() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function makeMultiplier(multiplier) {
+    return function (number) {
+      return number * multiplier;
+  };
+}
+  const double = makeMultiplier(2);
+  console.log(double(5));
 
+  const triple = makeMultiplier(3);
+  console.log(triple(5));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -239,8 +256,19 @@ function exercise_09() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function factorial(n) {
+    if (n < 0) {
+      console.log("Bad number input");
+      return;
+    }
+    if (n === 0 || n === 1) {
+      return 1;
+    }
+    return n * factorial (n - 1);
+  }
 
+  console.log(factorial(5));
+  console.log(factorial(-12));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -257,8 +285,9 @@ function exercise_10() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  fruits.forEach((fruits) => {
+    console.log(fruits);
+  })
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -283,6 +312,14 @@ function exercise_11() {
 
   console.log(sum); // Outputs: 15
 
+  // solution
+  const sum_with_reducer = numbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+
+  console.log(sum_with_reducer); // Outputs: 15
+
   // REPLACE the code above
 }
 
@@ -301,8 +338,8 @@ function exercise_12() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  const evenNumbers = numbers.filter((numbers) => numbers % 2 === 0);
+  console.log(evenNumbers);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -323,8 +360,23 @@ function exercise_13() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function modifyPrimitive(primitive) {
+    primitive += 1;
+    console.log("Inside functon:", primitive);
+  }
 
+  function modifyObject(obj) {
+    obj.value += 1;
+    console.log("Inside function:", obj.value);
+  }
+
+  let num = 5;
+  modifyPrimitive(num);
+  console.log("Outside function:", num);
+
+  let obj = {value: 5};
+  modifyObject(obj);
+  console.log("Outside function:", obj.value);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -341,8 +393,14 @@ function exercise_14() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
+  function addProperty(obj, key, value) {
+    obj[key] = value;
+    console.log("Inside function:", obj);
+  }
 
+  let myObject = {name: "Alice", age: 30, occupation: "Engineer"};
+  addProperty(myObject, "hobby", "painting");
+  console.log("Outside function:", myObject);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -367,8 +425,8 @@ function exercise_15() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  const userBob = users.find((user) => user.name === "Bob");
+  console.log(userBob);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -390,8 +448,9 @@ function exercise_16() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  Object.entries(person).forEach(([key, value]) => {
+    console.log(`${key}: ${value}`);
+  });
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -409,8 +468,14 @@ function exercise_17() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  function capitalizeStrings(strings) {
+    return strings.map((str) => {
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    });
+  }
+  const inputStrings = ["hello", "world", "javascript"];
+  const capitalizedStrings = capitalizeStrings(inputStrings);
+  console.log(capitalizedStrings);
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -432,8 +497,10 @@ function exercise_18() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  function power(base, exponent = 2) {
+    return Math.pow(base, exponent);
+  }
+  console.log(power(5));
   // CODE IN THE OPEN LINES ABOVE
 }
 
@@ -453,7 +520,9 @@ function exercise_19() {
   */
   // CODE IN THE OPEN LINES BELOW
 
-  const placeholder = "Delete this line and code here";
-
+  (function() {
+    console.log("This is an IIFE that runs immediately!");
+  })();
+  console.log("This runs after the IIFE");
   // CODE IN THE OPEN LINES ABOVE
 }
